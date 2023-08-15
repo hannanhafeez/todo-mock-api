@@ -8,7 +8,7 @@ const app = express();
 const port = 8080;
 
 app.use(express.json()) // for parsing application/json
-app.options("*", cors());
+app.use(cors());
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
