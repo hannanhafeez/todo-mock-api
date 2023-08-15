@@ -2,12 +2,13 @@ const {readTodos, saveTodos} = require('./todos');
 const { v4: uuidv4 } = require("uuid");
 
 const express = require("express");
+var cors = require("cors");
+
 const app = express();
 const port = 8080;
 
 app.use(express.json()) // for parsing application/json
-
-
+app.options("*", cors());
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
